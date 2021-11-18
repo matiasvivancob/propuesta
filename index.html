@@ -10,20 +10,24 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Noto+Serif+Display:ital@1&family=Poppins:ital,wght@0,100;0,300;0,400;1,200&display=swap" rel="stylesheet">
         <title>Ref.new</title>
         <style type="text/css">h2, h3, h4, h5, h6, p{font-family: 'Poppins', sans-serif; color: white;} h1{font-family: 'Noto Serif Display', serif; color: white;}</style>
-
     </head>
+
     <body class="bg-black">
+
         <div class="container">
             <header class="row border-bottom">
                 <div class="col pt-3 pb-2">
                     <h2 class="fs-6 d-flex justify-content-between align-items-center text-white"><span>REF.NEW</span> <span>REFERENCIAS DE TODO TIPO</span></h1>
                 </div>
             </header>
+
             <main class="row text-center py-5"></main>
-                <div class="container px-4 px-lg-5 text-center">
-                <h1 class="mb-1">Referencias de arte</h1>
-                <h5 class="mb-5">Traidas a ti con mucho cariño</em></h3>
-                </div>
+                
+            <div class="container px-4 px-lg-5 text-center">
+            <h1 class="mb-1">Referencias de arte</h1>
+            <h5 class="mb-5">Traidas a ti con mucho cariño</em></h3>
+            </div>
+
             <footer class="row border-top">
                 <div class="col py-2">
                     <p class="d-flex justify-content-between align-items-center small">
@@ -31,9 +35,11 @@
                     </p>
                 </div>
             </footer>
+
         </div>
     </body>
-    <script>
+<script>
+
                     fetch("https://sheet.best/api/sheets/d6badc79-ffd5-4dae-bcf2-9c334ae3062a")
                         .then((response) => response.json())
                         .then((datos) => {
@@ -41,10 +47,13 @@
                             var aqui = document.getElementsByTagName("main")[0];
                             datos.reverse();
                             datos.forEach((d) => {
+
                                 foto_id = d.Imagen.split("=").pop();
                                 foto_util = "https://drive.google.com/uc?export=view&id=" + foto_id;
-                                aqui.innerHTML += '<div class="col-xl-16 mx-auto mb-5"><h2 class="text-white">' + d.Nombre + '</h2><img src="' + foto_util + '" class="w-50 mx-auto my-3 shadow"><p class="lead text-white">' + d.Autor + "</p><p>" + d.Categoria + "</p></div>";
+                                aqui.innerHTML += '<div class="col-4 mb-5"><h2 class="text-white">' + d.Nombre + '</h2><img src="' + foto_util + '" class="w-100 mx-auto my-3 shadow"><p class="lead text-white">' + d.Autor + "</p><p>" + d.Categoria + "</p></div>";
+
                             });
                         })
-                    </script>
+
+</script>
 </html>
